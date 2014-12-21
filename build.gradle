@@ -28,10 +28,11 @@ dependencies {
 mainClassName = 'com.bmuschko.gradle.docker.application.JettyMain'
 
 docker {
-    serverUrl = 'http://remote.docker.com:2375'
+    serverUrl = 'http://192.168.59.103:2375'
+/*    serverUrl = 'http://remote.docker.com:2375'
     certPath = new File('/Users/derk/.boot2docker/certs/boot2docker-vm')
 
-/*
+
     credentials {
         username = 'muenchhausen'
         password = 'pwd'
@@ -39,7 +40,10 @@ docker {
     }
 */
     javaApplication {
+        baseImage = 'dockerfile/java:openjdk-7-jre'
         maintainer = 'Derk Muenchhausen "derk@muenchhausen.de"'
+        tag = 'gradle-docker-plugin-sample:1.0'
+        port = 8080
     }
 }
 
