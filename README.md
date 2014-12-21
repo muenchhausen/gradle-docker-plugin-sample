@@ -6,7 +6,7 @@ a beginners java-hello-world-sample for the [gradle-docker-plugin] (https://gith
 * shows how to build a docker image for a hello-world-java-application using gradle
 * run the docker image
 
-**prepare boot2docker**
+#### prepare boot2docker
 Boot2docker must be installed. For MAC OS, follow [docker installation mac] (https://docs.docker.com/installation/mac/).
 Start boot2docker.app. If it is not already started type in the console
 ```bash
@@ -22,7 +22,7 @@ VBoxManage modifyvm "boot2docker-vm" --natpf1 "tcp-port8080,tcp,,8080,,8080"
 boot2docker up
 ```
 
-**deactivate TLS in boot2docker**
+#### deactivate TLS in boot2docker
 The current gradle-docker-plugin version is not working with DOCKER_TLS enabled.
 so run ```boot2docker ssh``` and then type inside
 ```bash
@@ -31,7 +31,7 @@ echo 'DOCKER_TLS=no' >> /var/lib/boot2docker/profile
 exit
 ```
 
-**get this java sample, build and run it**
+#### get this java sample, build and run it
 open a new console and run the following
 ```bash
 git clone https://github.com/muenchhausen/gradle-docker-plugin-sample.git
