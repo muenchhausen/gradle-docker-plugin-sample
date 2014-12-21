@@ -1,8 +1,7 @@
 gradle-docker-plugin-sample DRAFT
 =================================
 
-a beginners java hello world sample for the [gradle-docker-plugin] (https://github.com/bmuschko/gradle-docker-plugin) Version 0.71.
-This hello world sample includes
+a beginners java-hello-world-sample for the [gradle-docker-plugin] (https://github.com/bmuschko/gradle-docker-plugin) Version 0.71. It includes
 * some steps for first time setup of boot2docker
 * shows how to build a docker image for a hello-world-java-application using gradle
 * run the docker image
@@ -47,7 +46,7 @@ If you are unsure about the image id, list it and choose it:
 docker images
 ```
 
-Then run.
+Then run:
 ```bash
 docker run -d -p 8080:8080 <imageId>
 ```
