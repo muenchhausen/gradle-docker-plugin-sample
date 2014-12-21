@@ -1,0 +1,45 @@
+apply plugin: 'java'
+apply plugin: 'application'
+// apply plugin: 'com.bmuschko.docker-remote-api'
+apply plugin: 'com.bmuschko.docker-java-application'
+
+
+version = '1.0'
+sourceCompatibility = 1.7
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-docker-plugin:0.7.1'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.eclipse.jetty.aggregate:jetty-all:9.2.5.v20141112'
+}
+
+mainClassName = 'com.bmuschko.gradle.docker.application.JettyMain'
+
+docker {
+    serverUrl = 'http://remote.docker.com:2375'
+    certPath = new File('/Users/derk/.boot2docker/certs/boot2docker-vm')
+
+/*
+    credentials {
+        username = 'muenchhausen'
+        password = 'pwd'
+        email = 'derk@muenchhausen.de'
+    }
+*/
+    javaApplication {
+        maintainer = 'Derk Muenchhausen "derk@muenchhausen.de"'
+    }
+}
+
