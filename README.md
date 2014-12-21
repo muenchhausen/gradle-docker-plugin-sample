@@ -8,15 +8,15 @@ This hello world sample includes
 * run the docker image
 
 **prepare boot2docker**
-* Boot2docker must be installed. For MAC OS, follow [docker installation mac] (https://docs.docker.com/installation/mac/).
-* Start boot2docker.app. If it is not already started type in the console
+Boot2docker must be installed. For MAC OS, follow [docker installation mac] (https://docs.docker.com/installation/mac/).
+Start boot2docker.app. If it is not already started type in the console
 ```bash
 boot2docker up
 docker version
 boot2docker shellinit
 ```
 
-* not sure - it might be required to set some port mappings
+not sure - it might be required to set some port mappings
 ```bash
 boot2docker down
 VBoxManage modifyvm "boot2docker-vm" --natpf1 "tcp-port8080,tcp,,8080,,8080"
