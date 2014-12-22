@@ -31,16 +31,16 @@ echo 'DOCKER_TLS=no' >> /var/lib/boot2docker/profile
 exit
 ```
 
-#### get this java sample, build and run it
+#### get this java sample, build it and run it
 open a new console and run the following
 ```bash
 git clone https://github.com/muenchhausen/gradle-docker-plugin-sample.git
 cd gradle-docker-plugin-sample
-gradle dockerBuildImage
+./gradlew dockerBuildImage
 ```
-if it is sucessful, you will see a image id.
+if it is sucessful, you will see an image id.
 
-For using the docker commands, maybe you need to set ```DOCKER_HOST``` and other env Variables that came from ```boot2docker shellinit``` first.
+For using the docker commands, you might need to set ```DOCKER_HOST``` and other env Variables that came from ```boot2docker shellinit``` first.
 If you are unsure about the image id, list it and choose it:
 ```bash
 docker images
@@ -51,5 +51,6 @@ Then run:
 docker run -d -p 8080:8080 <imageId>
 ```
 
-open browser with the boot2docker IP address and Port 8080, e.g. http://192.168.59.103:8080/
+finally: Open a browser with the boot2docker IP address and Port 8080, e.g. http://192.168.59.103:8080/
 
+![Screenshot](screenshot1.png)
