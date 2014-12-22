@@ -22,15 +22,6 @@ VBoxManage modifyvm "boot2docker-vm" --natpf1 "tcp-port8080,tcp,,8080,,8080"
 boot2docker up
 ```
 
-#### deactivate TLS in boot2docker
-The current gradle-docker-plugin version is not working with DOCKER_TLS enabled.
-so run ```boot2docker ssh``` and then type inside
-```bash
-sudo su -
-echo 'DOCKER_TLS=no' >> /var/lib/boot2docker/profile
-exit
-```
-
 #### get this java sample, build it and run it
 open a new console and run the following
 ```bash
@@ -38,7 +29,7 @@ git clone https://github.com/muenchhausen/gradle-docker-plugin-sample.git
 cd gradle-docker-plugin-sample
 ./gradlew dockerBuildImage
 ```
-if it is sucessful, you will see an image id.
+if it is successful, you will see an image id.
 
 For using the docker commands, you might need to set ```DOCKER_HOST``` and other env Variables that came from ```boot2docker shellinit``` first.
 If you are unsure about the image id, list it and choose it:
