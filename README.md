@@ -5,6 +5,7 @@ a beginners java-hello-world-sample for the [gradle-docker-plugin] (https://gith
 * some steps for first time setup of boot2docker
 * shows how to build a docker image for a hello-world-java-application using gradle
 * run the docker image
+It runs with Oracle Java 8 (default) or OpenJDK 7.
 
 #### prepare boot2docker
 Boot2docker must be installed. For MAC OS, follow [docker installation mac] (https://docs.docker.com/installation/mac/).
@@ -20,6 +21,11 @@ not sure - it might be required to set some port mappings
 boot2docker down
 VBoxManage modifyvm "boot2docker-vm" --natpf1 "tcp-port8080,tcp,,8080,,8080"
 boot2docker up
+```
+
+try if boot2docker pull works - e.g.
+```bash
+docker pull dockerfile/java:oracle-java8
 ```
 
 #### get this java sample, build it and run it

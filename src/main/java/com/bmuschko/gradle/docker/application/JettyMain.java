@@ -19,6 +19,7 @@ public class JettyMain extends AbstractHandler
         baseRequest.setHandled(true);
         response.getWriter().println("<p><img src='http://www.docker.io/static/img/homepage-docker-logo.png'></p>");
         response.getWriter().println("<br><h1>Hello, Docker!</h1>");
+        response.getWriter().println("<p>Java Version: "+System.getProperty("java.version")+"</p>");
     }
     public static void main(String[] args) throws Exception
     {

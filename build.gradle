@@ -4,8 +4,11 @@ apply plugin: 'application'
 apply plugin: 'com.bmuschko.docker-java-application'
 
 
-version = '1.0'
-sourceCompatibility = 1.7
+version = '1.1'
+// Either Java 7:
+// sourceCompatibility = 1.7
+// or Java 8:
+sourceCompatibility = 1.8
 
 buildscript {
     repositories {
@@ -38,9 +41,14 @@ docker {
     // serverUrl = 'http://192.168.59.103:2375'
 
     javaApplication {
-        baseImage = 'dockerfile/java:openjdk-7-jre'
+        // either: Java 7 openjdk:
+        // baseImage = 'dockerfile/java:openjdk-7-jre'
+
+        // or Java 8:
+        baseImage = 'dockerfile/java:oracle-java8'
+
         maintainer = 'Derk Muenchhausen "derk@muenchhausen.de"'
-        tag = 'gradle-docker-plugin-sample:1.0'
+        tag = 'gradle-docker-plugin-sample:1.1'
         port = 8080
     }
 }
