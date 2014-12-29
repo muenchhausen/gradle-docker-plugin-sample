@@ -5,6 +5,7 @@ a beginners java-hello-world-sample for the [gradle-docker-plugin] (https://gith
 * some steps for first time setup of boot2docker
 * shows how to build a docker image for a hello-world-java-application using gradle
 * run the docker image
+
 It runs with Oracle Java 8 (default) or OpenJDK 7.
 
 #### prepare boot2docker
